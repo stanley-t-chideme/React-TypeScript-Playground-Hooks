@@ -1,4 +1,7 @@
-import { Asset } from './Challenge'; // Assuming types are exported
+// import { Asset } from './Challenge'; // Assuming types are exported
+
+import { Asset } from "./types";
+
 
 // Mock data to simulate an API response
 const mockAssets: Asset[] = [
