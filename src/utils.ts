@@ -39,6 +39,7 @@ export async function mockFetchAssets(): Promise<Asset[]> {
 
   return new Promise((resolve, reject) => {
     setTimeout(() => {
+      
       if (isError) {
         reject(new Error('Failed to fetch assets. Server offline.'));
       } else {
