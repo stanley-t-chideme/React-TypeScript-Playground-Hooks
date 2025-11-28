@@ -1,8 +1,9 @@
 import { Clear, Search } from '@mui/icons-material';
-import { Chip, Divider, IconButton, InputBase, List, ListItem, ListItemText, Paper } from '@mui/material';
-import { FC, useEffect, useState } from 'react';
+import { Divider, IconButton, InputBase, List, ListItem, ListItemText, Paper } from '@mui/material';
+import { useEffect, useState, type FC } from 'react';
 import { mockFetchAssets } from './utils';
-import { Asset } from './types';
+import type { Asset } from './types';
+import Chip from '@mui/material/Chip';
 
 export const AssetList: FC = () => {
   const [data, setData] = useState<Asset[]>();
@@ -57,8 +58,6 @@ export const AssetList: FC = () => {
         </div>
       </ListItem>)}
     </List>}
-
-
-
   </div>;
 };
+

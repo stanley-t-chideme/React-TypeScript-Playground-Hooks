@@ -1,6 +1,6 @@
 // import { Asset } from './Challenge'; // Assuming types are exported
 
-import { Asset } from "./types";
+import type { Asset } from "./types";
 
 
 // Mock data to simulate an API response
