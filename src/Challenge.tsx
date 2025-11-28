@@ -1,5 +1,5 @@
 import { Clear, Search } from '@mui/icons-material';
-import { Divider, IconButton, InputBase, List, ListItem, ListItemText, Paper } from '@mui/material';
+import { Chip, Divider, IconButton, InputBase, List, ListItem, ListItemText, Paper } from '@mui/material';
 import { FC, useEffect, useState } from 'react';
 import { mockFetchAssets } from './utils';
 import { Asset } from './types';
@@ -42,11 +42,23 @@ export const AssetList: FC = () => {
       </IconButton>
     </Paper>
 
+    {data && <h2 className='mt-4 mb-2'>Showing ({data.length}) results</h2>}
     {data && <List>
       {data.map((item) => <ListItem key={item.id} className='shadow-sm flex flex-row'>
-        <ListItemText>{item.name}</ListItemText>
+        <div className="">
+          <ListItemText>{item.name}</ListItemText>
+          <Chip label={item.type} size='small'/>
+        </div>
+        
+        <div className="ml-auto text-right">
+          <Divider orientation="vertical" flexItem />
+          <Chip label={item.status} size='small'/>
+          <ListItemText className='text-right'>{item.value}</ListItemText>
+        </div>
       </ListItem>)}
     </List>}
+
+
 
   </div>;
 };
